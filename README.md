@@ -10,21 +10,25 @@ A minimal, well-structured template that shows how to:
 * build everything with **PlatformIO**.
 
 
-Directory Structure
+### Directory structure
 
+```text
 eeproj-ais-collision-detect/
 ├─ platformio.ini        ← board + libraries + build flags
 ├─ include/              ← public headers
-│    ├─ DataTypes.h
-│    └─ (optional) FreeRTOSConfig.h 
+│   ├─ DataTypes.h
+│   └─ FreeRTOSConfig.h   (optional)
 ├─ src/                  ← firmware source
-│    ├─ main.cpp
-│    ├─ sensors/
-│    │    ├─ GpsSensor.h / .cpp
-│    │    └─ HeadingSensor.h / .cpp
-│    ├─ alerts/
-│    │    └─ AlertManager.h / .cpp
-│    └─ tasks/           ← your project logic, create multiple modules here
-│         └─ e.g ReadAis.cpp
-├─ lib/                  ← third-party libs, if any
-└─ tools/                ← for Python tools(AIS log replay, etc.)
+│   ├─ main.cpp
+│   ├─ sensors/
+│   │   ├─ GpsSensor.h
+│   │   ├─ GpsSensor.cpp
+│   │   ├─ HeadingSensor.h
+│   │   └─ HeadingSensor.cpp
+│   ├─ alerts/
+│   │   ├─ AlertManager.h
+│   │   └─ AlertManager.cpp
+│   └─ tasks/            ← project logic modules
+│       └─ ReadAis.cpp   (example)
+├─ lib/                  ← third-party libraries, if any
+└─ tools/                ← host-side Python (AIS log replay, etc.)
